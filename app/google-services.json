@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "840294111489",
+    "project_id": "msaproj-f347e",
+    "storage_bucket": "msaproj-f347e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840294111489:android:3072343df41e5610792300",
+        "android_client_info": {
+          "package_name": "com.example.msaproj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840294111489-bo8cq93hldi2o2s6533jg9l96kiqmtr4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNBQmGDPnstxlj2djxJJhMkzTCCwnsolk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840294111489-bo8cq93hldi2o2s6533jg9l96kiqmtr4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
