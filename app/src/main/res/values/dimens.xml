@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_small_size">18sp</dimen>
+    <dimen name="small_size">24sp</dimen>
+    <dimen name="medium_size">32sp</dimen>
+    <dimen name="margin_small_small_size">5dp</dimen>
+    <dimen name="margin_small_size">10dp</dimen>
+    <dimen name="margin_medium_size">20dp</dimen>
+    <dimen name="margin_big_size">40dp</dimen>
+    <dimen name="padding_medium_size">20dp</dimen>
+</resources>
