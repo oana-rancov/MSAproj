@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class LogInActivity extends AppCompatActivity{
     private static final String TAG = LogInActivity.class.getSimpleName();
     private EditText login_username, login_password;
-    private Button btLogin;
+    private Button btLogin, btForgotPass;
     DatabaseReference databaseReference;
 
     @Override
@@ -27,6 +27,7 @@ public class LogInActivity extends AppCompatActivity{
         login_password = (EditText)findViewById(R.id.login_password);
 
         btLogin = (Button)findViewById(R.id.btLogin);
+        btForgotPass = (Button)findViewById(R.id.btForgotPass);
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
 
 
