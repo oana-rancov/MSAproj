@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MSAproj">
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LogInActivity"></activity>
         <activity android:name=".RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
