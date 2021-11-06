@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyAppStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/medium_size</item>
+        <item name="windowActionBar">false</item>
+
+    </style>
+    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+</resources>
