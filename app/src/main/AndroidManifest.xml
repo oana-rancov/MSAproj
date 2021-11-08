@@ -11,8 +11,10 @@
         android:theme="@style/Theme.MSAproj">
         <activity android:name=".MainActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".RegisterActivity" >
-
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
