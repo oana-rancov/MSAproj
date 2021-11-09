@@ -7,15 +7,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class LogInActivity extends AppCompatActivity{
-    private static final String TAG = LogInActivity.class.getSimpleName();
+public class LogInActivity extends AppCompatActivity implements View.OnClickListener{
+    //private static final String TAG = LogInActivity.class.getSimpleName();
     private EditText login_username, login_password;
-    private Button btLogin, btForgotPass;
+    private Button btLogin;
+    private TextView register, forgot_password;
     DatabaseReference databaseReference;
 
     @Override
@@ -27,18 +29,19 @@ public class LogInActivity extends AppCompatActivity{
         login_password = (EditText)findViewById(R.id.login_password);
 
         btLogin = (Button)findViewById(R.id.btLogin);
-        btForgotPass = (Button)findViewById(R.id.btForgotPass);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("Users");
+        forgot_password= (TextView) findViewById(R.id.forgotPassword);
+        register= (TextView) findViewById(R.id.Register);
+        register.setOnClickListener(this);
 
+    }
 
-        //when we click on the Register button
-        btLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               //
-
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.Register:
+                startActivity(new Intent(this, RegisterActivity.class));
+                break;
+        }
     }
 }
 
