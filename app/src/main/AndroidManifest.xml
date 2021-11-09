@@ -12,6 +12,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".RegisterActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".MainScreen_Activity" />
         <activity
             android:name=".SplashActivity"

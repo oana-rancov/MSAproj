@@ -8,28 +8,15 @@
     android:orientation="vertical"
     android:background="@drawable/gradient1">
 
-    <TextView
-        android:id="@+id/maintext"
+    <Button
+        android:id="@+id/signoutbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Main Screen"
-        android:textSize="30dp"
+        android:text="Logout"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="90dp"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@color/black"
         />
-
-        <TextView
-            android:id="@+id/profileBt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:text="Profile" />
-
-
-
-
 
 </LinearLayout>
