@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
     //private static final String TAG = RegisterActivity.class.getSimpleName();
-    private EditText firstName, lastName, userName, email, password;
+    private EditText firstName, lastName, email, password;
     private Button register;
     private FirebaseAuth mAuth;
     //DatabaseReference databaseReference;
@@ -35,7 +35,6 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         firstName = (EditText)findViewById(R.id.registerFirstName);
         lastName = (EditText)findViewById(R.id.registerLastName);
-        userName = (EditText)findViewById(R.id.registerUsername);
         email = (EditText)findViewById(R.id.registerEmail);
         password = (EditText)findViewById(R.id.registerPassword);
         register = (Button)findViewById(R.id.btRegister);
@@ -49,7 +48,6 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String first_name= firstName.getText().toString().trim();
                 String last_name=lastName.getText().toString().trim();
-                String user_name=userName.getText().toString().trim();
                 String email_register=email.getText().toString().trim();
                 String password_register=password.getText().toString().trim();
 
@@ -63,11 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                     lastName.requestFocus();
                     return;
                 }
-                if(user_name.isEmpty()) {
-                    userName.setError("Username is required!");
-                    userName.requestFocus();
-                    return;
-                }
+
                 if(email_register.isEmpty()) {
                     email.setError("Email is required!");
                     email.requestFocus();
@@ -95,7 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Users user = new Users(first_name, last_name, user_name, password_register, email_register);
+                                    Users user = new Users(first_name, last_name, password_register, email_register);
                                     FirebaseDatabase.getInstance().getReference("Users")
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
