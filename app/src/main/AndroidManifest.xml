@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MSAproj">
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.MSAproj.NoActionBar"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".RegisterActivity" />
