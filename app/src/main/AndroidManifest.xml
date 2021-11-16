@@ -19,6 +19,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".MainScreen_Activity" />
+        <activity android:name=".AddActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Splash">
