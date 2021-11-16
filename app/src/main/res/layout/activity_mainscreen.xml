@@ -22,9 +22,10 @@
         <TextView
             android:id="@+id/profileBt"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
+            android:layout_height="match_parent"
             android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="bottom"
             android:textColor="@color/black"
             android:text="Profile" />
 
