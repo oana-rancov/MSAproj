@@ -22,11 +22,23 @@
         <TextView
             android:id="@+id/profileBt"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
-            android:background="@android:color/darker_gray"
-            android:textSize="20sp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:gravity="bottom"
             android:textColor="@color/black"
             android:text="Profile" />
+
+    <TextView
+        android:id="@+id/addBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:textColor="@color/black"
+        android:text="+" />
 
 
 
