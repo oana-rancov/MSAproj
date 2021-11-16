@@ -11,7 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainScreen_Activity extends AppCompatActivity implements View.OnClickListener {
-    private TextView maintext, profileBt;
+    private TextView maintext, profileBt, addBt;
+
 
 
     @Override
@@ -20,7 +21,9 @@ public class MainScreen_Activity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_mainscreen);
         maintext = (TextView) findViewById(R.id.maintext);
         profileBt = (TextView) findViewById(R.id.profileBt);
+        addBt = (TextView) findViewById(R.id.addBt) ;
         profileBt.setOnClickListener(this);
+        addBt.setOnClickListener(this);
     }
 
     @Override
@@ -28,6 +31,9 @@ public class MainScreen_Activity extends AppCompatActivity implements View.OnCli
         switch (v.getId()) {
             case R.id.profileBt:
                 startActivity(new Intent(this, ProfileActivity.class));
+                break;
+            case R.id.addBt :
+                startActivity(new Intent(this, AddActivity.class));
                 break;
         }
     }

@@ -23,12 +23,22 @@
             android:id="@+id/profileBt"
             android:layout_width="wrap_content"
 
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="30sp"
             android:textStyle="bold"
             android:gravity="bottom"
             android:textColor="@color/black"
             android:text="Profile" />
+
+    <TextView
+        android:id="@+id/addBt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:gravity="right"
+        android:textColor="@color/black"
+        android:text="+" />
 
 
 
