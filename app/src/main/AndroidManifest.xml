@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.msaproj">
 
+    !--camera permission
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +15,7 @@
         <activity
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/Theme.MSAproj.NoActionBar"></activity>
+            android:theme="@style/Theme.MSAproj.NoActionBar"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".LogInActivity" />
         <activity android:name=".RegisterActivity" />
