@@ -39,6 +39,7 @@ public class AddActivity extends AppCompatActivity {
   private EditText add_sum, add_category;
   FirebaseDatabase rootNode;
   DatabaseReference reference;
+  IncomesExpenses incomesexpenses;
 
   @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class AddActivity extends AppCompatActivity {
         String sum= add_sum.getText().toString().trim();
         String category=add_category.getText().toString().trim();
 
+
         if(sum.isEmpty()) {
           add_sum.setError("Please enter the sum");
           add_sum.requestFocus();
@@ -80,9 +82,10 @@ public class AddActivity extends AppCompatActivity {
 
         }
 
-        rootNode = FirebaseDatabase.getInstance();
-        reference = rootNode.getReference("months");
-        reference.setValue("first entry");
+        //rootNode = FirebaseDatabase.getInstance();
+       // reference = rootNode.getReference("months");
+        //reference = rootNode.getReference(String.valueOf(spinnerMonth));
+        //reference.setValue("first entry");
 
       }
     });
