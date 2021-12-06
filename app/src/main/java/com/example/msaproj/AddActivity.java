@@ -115,6 +115,7 @@ public class AddActivity extends AppCompatActivity {
       public void onDataChange(@NonNull DataSnapshot snapshot) {
         databaseReference.setValue(incomesexpenses);
         Toast.makeText(AddActivity.this, "data added", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent (AddActivity.this, NavigationActivity.class));
       }
 
       @Override
