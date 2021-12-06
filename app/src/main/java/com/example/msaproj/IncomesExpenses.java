@@ -7,7 +7,7 @@ public class IncomesExpenses {
     private String category;
     private String sum;
     private String month;
-
+    private String user_uid;
 
     public IncomesExpenses(){
 
@@ -19,6 +19,10 @@ public class IncomesExpenses {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void setUser_uid(String user_uid) {
+        this.user_uid = user_uid;
     }
 
     public String getCategory() {

@@ -29,6 +29,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -97,14 +98,16 @@ public class AddActivity extends AppCompatActivity {
        // reference = rootNode.getReference("months");
         //reference = rootNode.getReference(String.valueOf(spinnerMonth));
         //reference.setValue("first entry");
-        addDatatoFirebase(month, sum, category, type);
+        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        addDatatoFirebase(currentuser, month, sum, category, type);
       }
 
 
     });
   }
 
-  private void addDatatoFirebase(String month, String sum, String category, String type) {
+  private void addDatatoFirebase(String currentuser, String month, String sum, String category, String type) {
+    incomesexpenses.setUser_uid(currentuser);
     incomesexpenses.setMonth(month);
     incomesexpenses.setSum(sum);
     incomesexpenses.setCategory(category);
