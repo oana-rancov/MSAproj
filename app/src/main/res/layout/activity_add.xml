@@ -19,14 +19,15 @@
     />
 
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/selection_type"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"
-
-        android:autofillHints="Choose the type"/>
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:hint="Income/Expense"
+        android:textSize="20sp"
+        />
 
     <EditText
         android:id="@+id/add_sum"
@@ -48,14 +49,15 @@
         android:textSize="20sp"
         />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
+    <EditText
+        android:id="@+id/month"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:spinnerMode="dropdown"
-
-        android:autofillHints="Choose the month"/>
+        android:layout_marginTop="20dp"
+        android:inputType="text"
+        android:hint="Provide the current month"
+        android:textSize="20sp"
+        />
 
 
     <Button
