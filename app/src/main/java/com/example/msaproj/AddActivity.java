@@ -75,9 +75,9 @@ public class AddActivity extends AppCompatActivity {
         }
 
         if(category.isEmpty()) {
-          add_category.setError("Category is mandatory");
+          add_category.setError("Please type the category");
           add_category.requestFocus();
-          return;
+
         }
 
         rootNode = FirebaseDatabase.getInstance();
