@@ -41,37 +41,37 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-        userid = user.getUid();
-
-        final TextView emailtext = (TextView) findViewById(R.id.email_title);
-        final TextView emailtextinfo = (TextView) findViewById(R.id.email_info);
-        final TextView firstnametext= (TextView) findViewById(R.id.firstname_title);
-        final TextView firstnametextinfo= (TextView) findViewById(R.id.firstname_info);
-        final TextView lastnametext = (TextView) findViewById(R.id.lastname_title);
-        final TextView lastnametextinfo = (TextView) findViewById(R.id.lastname_info);
-
-        reference.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                Users userprofile = snapshot.getValue(Users.class);
-                if (userprofile != null) {
-                    String email = userprofile.email;
-                    String firstname = userprofile.first_name;
-                    String lastname = userprofile.last_name;
-
-                    emailtextinfo.setText(email);
-                    firstnametextinfo.setText(firstname);
-                    lastnametextinfo.setText(lastname);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
-
-            }
-        });
+//        user = FirebaseAuth.getInstance().getCurrentUser();
+//        reference = FirebaseDatabase.getInstance().getReference("Users");
+//        userid = user.getUid();
+//
+//        final TextView emailtext = (TextView) findViewById(R.id.email_title);
+//        final TextView emailtextinfo = (TextView) findViewById(R.id.email_info);
+//        final TextView firstnametext= (TextView) findViewById(R.id.firstname_title);
+//        final TextView firstnametextinfo= (TextView) findViewById(R.id.firstname_info);
+//        final TextView lastnametext = (TextView) findViewById(R.id.lastname_title);
+//        final TextView lastnametextinfo = (TextView) findViewById(R.id.lastname_info);
+//
+//        reference.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull  DataSnapshot snapshot) {
+//                Users userprofile = snapshot.getValue(Users.class);
+//                if (userprofile != null) {
+//                    String email = userprofile.email;
+//                    String firstname = userprofile.first_name;
+//                    String lastname = userprofile.last_name;
+//
+//                    emailtextinfo.setText(email);
+//                    firstnametextinfo.setText(firstname);
+//                    lastnametextinfo.setText(lastname);
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(ProfileActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+//
+//            }
+//        });
     }
 }
