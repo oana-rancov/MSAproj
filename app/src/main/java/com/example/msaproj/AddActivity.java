@@ -68,7 +68,7 @@ public class AddActivity extends AppCompatActivity {
         String type = add_type.getText().toString().trim();
         String month =add_month.getText().toString().trim();
 
-
+      //insert drop down list
 
         if(sum.isEmpty()) {
           add_sum.setError("Please enter the sum");
