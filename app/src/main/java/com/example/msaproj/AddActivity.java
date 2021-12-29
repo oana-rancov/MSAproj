@@ -27,7 +27,7 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
   private static final String TAG = AddActivity.class.getSimpleName();
   private TextView title;
   Button saveBt;
-  private EditText add_sum, add_category, add_type;
+  private EditText add_sum, add_type;
   Spinner spinnerMonths;
   Spinner spinnerCategory;
   String textMonthSelected, textCategorySelecetd;
@@ -44,7 +44,6 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
     setContentView(R.layout.activity_add);
     add_type = (EditText) findViewById(R.id.selection_type);
 
-    add_category = (EditText) findViewById(R.id.add_category);
 
     title = (TextView) findViewById(R.id.title);
     add_sum = (EditText) findViewById(R.id.add_sum);
@@ -79,7 +78,6 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
       @Override
       public void onClick(View v) {
         String sum= add_sum.getText().toString().trim();
-        String category=add_category.getText().toString().trim();
         String type = add_type.getText().toString().trim();
 
       //insert drop down list
@@ -90,11 +88,6 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
           return;
         }
 
-        if(category.isEmpty()) {
-          add_category.setError("Please type the category");
-          add_category.requestFocus();
-
-        }
 
         if(type.isEmpty()) {
           add_type.setError("Please provide the type");
@@ -109,7 +102,7 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
         //reference = rootNode.getReference(String.valueOf(spinnerMonth));
         //reference.setValue("first entry");
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        addDatatoFirebase(currentuser, textMonthSelected, sum, category, type);
+        addDatatoFirebase(currentuser, textMonthSelected, sum, textCategorySelecetd, type);
       }
 
 
@@ -140,8 +133,12 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
 
   @Override
   public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-    textMonthSelected = adapterView.getItemAtPosition(i).toString();
-    textCategorySelecetd = adapterView.getItemAtPosition(i).toString();
+
+    if(adapterView.getId() == R.id.spinnerMonths){
+      textMonthSelected = spinnerMonths.getSelectedItem().toString();
+    }
+    else if(adapterView.getId() == R.id.spinnerCategory)
+      textCategorySelecetd = spinnerCategory.getSelectedItem().toString();
   }
 
   @Override
