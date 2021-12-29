@@ -50,6 +50,15 @@
         />
 
     <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        android:layout_marginTop="@dimen/margin_medium_size"
+        tools:ignore="DuplicateIds" />
+
+    <Spinner
         android:id="@+id/spinnerMonths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -29,8 +29,8 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
   Button saveBt;
   private EditText add_sum, add_category, add_type;
   Spinner spinnerMonths;
-
-  String textMonthSelected;
+  Spinner spinnerCategory;
+  String textMonthSelected, textCategorySelecetd;
 
   FirebaseDatabase firebaseDatabase;
   DatabaseReference databaseReference;
@@ -50,11 +50,13 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
     add_sum = (EditText) findViewById(R.id.add_sum);
     saveBt = (Button) findViewById(R.id.saveBt);
     spinnerMonths = (Spinner) findViewById(R.id.spinnerMonths);
+    spinnerCategory = (Spinner) findViewById(R.id.spinnerCategory);
 
     firebaseDatabase = FirebaseDatabase.getInstance();
     databaseReference = firebaseDatabase.getReference("Incomes/Expenses");
     incomesexpenses = new IncomesExpenses();
 
+    //Months
     // Create an ArrayAdapter using the string array and a default spinner layout
     ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.months_array, android.R.layout.simple_spinner_item);
     // Specify the layout to use when the list of choices appears
@@ -62,7 +64,16 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
     // Apply the adapter to the spinner
     spinnerMonths.setAdapter(adapter);
 
+    //Category
+    // Create an ArrayAdapter using the string array and a default spinner layout
+    ArrayAdapter<CharSequence> adapterCateg = ArrayAdapter.createFromResource(this, R.array.category_array, android.R.layout.simple_spinner_item);
+    // Specify the layout to use when the list of choices appears
+    adapterCateg.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    // Apply the adapter to the spinner
+    spinnerCategory.setAdapter(adapterCateg);
+
     spinnerMonths.setOnItemSelectedListener(this);
+    spinnerCategory.setOnItemSelectedListener(this);
 
     saveBt.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -129,7 +140,8 @@ public class AddActivity extends AppCompatActivity implements AdapterView.OnItem
 
   @Override
   public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-    String textMonthSelected = adapterView.getItemAtPosition(i).toString();
+    textMonthSelected = adapterView.getItemAtPosition(i).toString();
+    textCategorySelecetd = adapterView.getItemAtPosition(i).toString();
   }
 
   @Override
